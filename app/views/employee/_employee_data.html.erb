@@ -1,0 +1,32 @@
+<tr>
+    <th scope="row"><%= employee.id %></th>
+    <td><%= employee.first_name %></td>
+    <td><%= employee.last_name %></td>
+    <td><%= employee.email_address %></td>
+    <td><%= employee.phone %></td>
+    <td><%= employee.salary %></td>
+    <td><%= employee.department.name %></td>
+    <td id ="<%= employee.id%>"class="edit_record_button blue_color">Update_Department</td>
+</tr>
+
+<script>
+bind_click_method_to_all_button();
+
+function bind_click_method_to_all_button() {
+    let edit_record_buttons = document.querySelectorAll(".edit_record_button");
+
+    for (let i = 0; i < edit_record_buttons.length; i++) {
+        edit_record_buttons[i].addEventListener("click", function(event) {
+            let data = {};
+            data["id"] = edit_record_buttons[i].id;
+            $.ajax({
+                url: window.location.href + '/employee/update_on_same_page',
+                type: 'get',
+                data: data,
+                dataType: 'script',
+                success: function(text) {}
+            });
+        });
+    }
+}
+</script>

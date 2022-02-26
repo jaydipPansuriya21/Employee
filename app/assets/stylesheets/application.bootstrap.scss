@@ -1,0 +1,62 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+.blue_color {
+    color: blue;
+}
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    // left: 0;
+    // top: 0;
+    overflow: hidden;
+    margin: auto;
+    width: 50%;
+    /* Full width */
+    height: 50%;
+    /* Full height */
+    /* Enable scroll if needed */
+    /* Fallback color */
+    background-color: rgb(211, 197, 200);
+    /* Black w/ opacity */
+    position: fixed;
+    // top: 50%;
+    left: 20%;
+    margin-top: -100px;
+    /* Negative half of height. */
+    margin-left: -250px;
+    opacity: 0.9;
+    /* Negative half of width. */
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    /* Could be more or less, depending on screen size */
+}

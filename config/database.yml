@@ -1,0 +1,33 @@
+
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
+  host: <%= ENV['HOST'] %>
+  port: <%= ENV['PORT']  %>
+
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: <%= ENV['TEST_DATABASE_NAME'] %>
+  username: <%= ENV['TEST_USERNAME'] %>
+  password: <%= ENV['TEST_PASSWORD'] %>
+  host: <%= ENV['TEST_HOST'] %>
+  port: <%= ENV['TEST_PORT']  %>
+
+production:
+  <<: *default
+  database: <%= ENV['PROD_DATABASE_NAME'] %>
+  username: <%= ENV['PROD_USERNAME'] %>
+  password: <%= ENV['PROD_PASSWORD'] %>
+  host: <%= ENV['PROD_HOST'] %>
+  port: <%= ENV['PROD_PORT'] %> 
